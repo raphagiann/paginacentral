@@ -1,0 +1,12 @@
+{
+  "name": "hub-central",
+  "version": "1.0.0",
+  "description": "Painel central com navegação em novas abas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

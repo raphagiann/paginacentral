@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel | Hub Central</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <span style="font-size:2.5rem">📊</span>
+    <h1>Painel de Controle</h1>
+    <p>Visão geral do sistema em tempo real.</p>
+
+    <div class="stats">
+      <div class="stat-box">
+        <div class="value" id="stat-status">...</div>
+        <div class="label">Status do Servidor</div>
+      </div>
+      <div class="stat-box">
+        <div class="value">4</div>
+        <div class="label">Páginas Ativas</div>
+      </div>
+      <div class="stat-box">
+        <div class="value" id="stat-hora">--:--</div>
+        <div class="label">Hora Atual</div>
+      </div>
+      <div class="stat-box">
+        <div class="value">v1.0</div>
+        <div class="label">Versão</div>
+      </div>
+    </div>
+
+    <a class="back-btn" href="/" onclick="window.close(); return false;">← Voltar ao Hub</a>
+  </div>
+
+  <script>
+    // Atualiza hora
+    function atualizarHora() {
+      document.getElementById('stat-hora').textContent =
+        new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    }
+    atualizarHora();
+    setInterval(atualizarHora, 1000);
+
+    // Verifica status da API
+    fetch('/api/status')
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById('stat-status').textContent = d.status === 'online' ? '🟢' : '🔴';
+      })
+      .catch(() => {
+        document.getElementById('stat-status').textContent = '🔴';
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hub Central</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🌐 Hub Central</h1>
+    <p>Selecione uma seção para abrir em uma nova aba</p>
+    <span id="status-badge">⏳ Verificando servidor...</span>
+  </header>
+
+  <main class="grid">
+    <div class="card" onclick="abrirAba('/sobre')">
+      <span class="icon">👤</span>
+      <h2>Sobre</h2>
+      <p>Conheça mais sobre nós e nossa missão.</p>
+    </div>
+
+    <div class="card" onclick="abrirAba('/servicos')">
+      <span class="icon">⚙️</span>
+      <h2>Serviços</h2>
+      <p>Veja tudo o que oferecemos para você.</p>
+    </div>
+
+    <div class="card" onclick="abrirAba('/contato')">
+      <span class="icon">✉️</span>
+      <h2>Contato</h2>
+      <p>Entre em contato com nossa equipe.</p>
+    </div>
+
+    <div class="card" onclick="abrirAba('/painel')">
+      <span class="icon">📊</span>
+      <h2>Painel</h2>
+      <p>Acesse o painel de controle completo.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Hub Central &copy; 2026</p>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
