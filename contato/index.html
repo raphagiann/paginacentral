@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato | Hub Central</title>
+  <link rel="stylesheet" href="../public/css/style.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <span style="font-size:2.5rem">✉️</span>
+    <h1>Contato</h1>
+    <p>Preencha o formulário abaixo e entraremos em contato em breve.</p>
+
+    <form onsubmit="enviar(event)">
+      <input type="text"  placeholder="Seu nome"     required />
+      <input type="email" placeholder="Seu e-mail"   required />
+      <textarea           placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar mensagem</button>
+    </form>
+
+    <a class="back-btn" href="../">← Voltar ao Hub</a>
+  </div>
+
+  <script>
+    function enviar(e) {
+      e.preventDefault();
+      alert('✅ Mensagem enviada com sucesso!');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
